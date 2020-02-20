@@ -23,22 +23,22 @@ let cards = [
 let cardsInPlay = [];
 
 function checkForMatch() {
-  if (cardsInPlay.length === 2) {
-	if (cardsInPlay[0] === cardsInPlay[1]) {
-	alert("You found a match!");
-} else {
-  alert("Sorry, try again.");
-}
+  if (cardsInPlay[0] === cardsInPlay[1]) {
+    alert("You found a match!");
+  } else {
+    alert("Sorry, try again.");
+  }
 }
 
-function flipcard() {
-  let cardId = [this.getAttribute("data-id")];
-    this.setAttribute("src", cards[cardId].cardImage);
+function flipCard() {
+  let cardId = this.getAttribute("data-id");
     cardsInPlay.push(cards[cardId].rank);
     console.log("User flipped " + cards[cardId].rank);
     console.log(cards[cardId].cardImage);
     console.log(cards[cardId].suit);
-	
+	this.setAttribute("src", cards[cardId].cardImage);
+
+  if (cardsInPlay.length === 2) {
   checkForMatch();
 }
 
