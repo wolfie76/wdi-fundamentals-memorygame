@@ -40,6 +40,7 @@ function flipCard() {
 
   if (cardsInPlay.length === 2) {
   checkForMatch();
+  }
 }
 
 function createBoard() {
